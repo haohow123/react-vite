@@ -23,6 +23,8 @@ npm start
 
 Simply type `git commit` and follow the instructions to input and select content to successfully commit.
 
+develop in GitHub flow, check PR at [here](https://github.com/haohow123/react-vite/pulls?q=is%3Apr+is%3Aclosed)
+
 ## Depandencies
 
 - **Material UI** - React Material Ui Framework
