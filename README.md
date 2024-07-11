@@ -35,6 +35,6 @@ develop in GitHub flow, check PR at [here](https://github.com/haohow123/react-vi
 - **Commitlint** - Lint commit messages
 - **lint-staged** - Run linters against staged git files
 - **Root import** - Import folders and files using the `@` prefix.
-- **vite-plugin-pages** - Pages route
-
-
+- **vite-plugin-pages** - File system based route generator for ⚡️Vite
+- **TanStack** - Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte
+- **recoil** - A state management library for React
