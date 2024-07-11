@@ -2,7 +2,7 @@ function getUser() {
   return { user: 'pikachu' };
 }
 
-function login({ account, password }: { account: string; password: string }) {
+function signIn({ account, password }: { account: string; password: string }) {
   return new Promise((resolve, reject) => {
     if (account === password) {
       setTimeout(() => resolve(crypto.randomUUID()), 3000);
@@ -12,4 +12,4 @@ function login({ account, password }: { account: string; password: string }) {
   });
 }
 
-export { login, getUser };
+export { signIn, getUser };
