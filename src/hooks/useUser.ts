@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 function useUserLogin(token?: string) {
   return useQuery({
     queryKey: ['user'],
-    queryFn: () => getUser(),
+    queryFn: () => getUser(token as string),
     enabled: !!token,
   });
 }
