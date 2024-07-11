@@ -1,11 +1,16 @@
 # Material UI - Vite.js in TypeScript
 
+## LOGIN
+
+Fill in the account and password fields with the same value, and then you can log in.
+
 ## Prerequisites
 
 - nodeJs
 - npm
 
 ## Getting Start
+
 Clone project
 
 ```sh
