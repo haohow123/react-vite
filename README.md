@@ -6,7 +6,7 @@
 
 Fill in the account and password fields with the same value, and then you can log in.
 
-The login state would keep 5 mins, if you refresh page will still in logged state.
+The logged state would keep 5 mins, if you refresh page will still in logged state.
 
 ## Prerequisites
 
