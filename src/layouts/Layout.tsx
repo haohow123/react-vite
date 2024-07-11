@@ -1,9 +1,12 @@
 import { Box, styled, Toolbar } from '@mui/material';
 
 import Drawer, { drawerWidth } from '@/components/Drawer';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import drawerOpenState from '@/atoms/drawer';
 import AppBar from '@/components/AppBar';
+import Snackbar from '@/components/Snackbar';
+import snackbarState from '@/atoms/snackbar';
+import useSnackbar from '@/hooks/useSnackbar';
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -33,6 +36,8 @@ type Props = {
 };
 function Layout({ children }: Props) {
   const [drawerOpen, setDrawerOpen] = useRecoilState(drawerOpenState);
+  const snackbar = useRecoilValue(snackbarState);
+  const { closeSnackbar } = useSnackbar();
   function handleDrawerOpen() {
     setDrawerOpen(true);
   }
@@ -48,6 +53,7 @@ function Layout({ children }: Props) {
         <Toolbar />
         {children}
       </Main>
+      <Snackbar {...snackbar} onClose={closeSnackbar} />
     </Box>
   );
 }
