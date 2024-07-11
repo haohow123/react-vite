@@ -1,6 +1,6 @@
 # Material UI - Vite.js in TypeScript
 
-[DEMO](https://haohow123.github.io/react-vite/)
+[DEMO](https://flourishing-kelpie-51f492.netlify.app/)
 
 ## LOGIN
 
