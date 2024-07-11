@@ -1,11 +1,12 @@
-function getUser() {
-  return { user: 'pikachu' };
+function getUser(token: string) {
+  const [account, password] = atob(token).split(':');
+  return { account, password };
 }
 
 function signIn({ account, password }: { account: string; password: string }) {
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     if (account === password) {
-      setTimeout(() => resolve(crypto.randomUUID()), 3000);
+      setTimeout(() => resolve(btoa(`${account}:${password}`)), 3000);
     } else {
       reject(new Error('password is wrong'));
     }
