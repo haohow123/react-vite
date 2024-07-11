@@ -11,6 +11,8 @@ import MuiDrawer, { DrawerProps as MuiDrawerProps } from '@mui/material/Drawer';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Link, useLocation } from 'react-router-dom';
+import Spacer from './Spacer';
+import SignInButton from './SignInButton';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -51,7 +53,10 @@ function Drawer({ open, sx, onClose, ...rest }: Props) {
         </IconButton>
       </DrawerHeader>
       <Divider />
-      <List>
+      <List
+        component="nav"
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
         {routes.map(({ name, to }) => (
           <ListItem
             key={name}
@@ -64,6 +69,10 @@ function Drawer({ open, sx, onClose, ...rest }: Props) {
             </ListItemButton>
           </ListItem>
         ))}
+        <Spacer />
+        <ListItem sx={{ justifySelf: 'flex-end' }}>
+          <SignInButton />
+        </ListItem>
       </List>
     </MuiDrawer>
   );

@@ -13,6 +13,10 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    info: {
+      light: 'rgba(0,0,0,0.23)',
+      main: 'rgba(0,0,0,0.6)',
+    },
   },
 });
 
