@@ -54,6 +54,9 @@
     "vite-plugin-pages": "^0.32.3",
     "vite-tsconfig-paths": "^4.3.2"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
