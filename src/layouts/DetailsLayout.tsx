@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import userToken from '@/atoms/userToken';
-import { ReactNode } from 'react';
-import SignInForm from '@/modules/SignInForm';
+import { Box, Container, Typography } from '@mui/material';
+import SignInButton from '@/components/SignInButton';
 
 type Props = {
   children: ReactNode;
@@ -10,7 +11,23 @@ type Props = {
 function DetailsLayout({ children }: Props) {
   const token = useRecoilValue(userToken);
   if (!token) {
-    return <SignInForm />;
+    return (
+      <Container maxWidth="xs" sx={{ minHeight: '100%' }}>
+        <Box
+          sx={{
+            minHeight: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            rowGap: 3,
+          }}
+        >
+          <Typography variant="h2">Access Denied</Typography>
+          <SignInButton />
+        </Box>
+      </Container>
+    );
   }
   return <>{children}</>;
 }

@@ -1,5 +1,5 @@
 import { SubmitHandler, useController, useForm } from 'react-hook-form';
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
   Avatar,
@@ -82,6 +82,14 @@ function SignInForm() {
       },
     });
   };
+  function handleSignUp() {
+    openSnackbar(
+      'Fill in the account and password fields with the same value.',
+    );
+  }
+  function handleForget() {
+    openSnackbar('please contact IT to reset you password.');
+  }
   return (
     <Container maxWidth="xs">
       <Box
@@ -150,12 +158,16 @@ function SignInForm() {
             sx={{ whiteSpace: 'nowrap', rowGap: 1 }}
           >
             <Grid item xs>
-              <Link component={RouterLink} to="#" variant="body2">
+              <Link variant="body2" onClick={handleForget}>
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link component={RouterLink} to="#" variant="body2">
+              <Link
+                variant="body2"
+                onClick={handleSignUp}
+                sx={{ cursor: 'pointer' }}
+              >
                 Don't have an account? Sign Up
               </Link>
             </Grid>
